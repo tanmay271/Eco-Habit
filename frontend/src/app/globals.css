@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius: 0.75rem;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 155 40% 15%;
+
+  --primary: 150 60% 35%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 140 30% 90%;
+  --secondary-foreground: 155 40% 15%;
+
+  --muted: 140 20% 96%;
+  --muted-foreground: 155 20% 40%;
+
+  --accent: 35 90% 60%;
+  --accent-foreground: 0 0% 100%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 155 40% 15%;
+
+  --border: 140 20% 90%;
+  --input: 140 20% 90%;
+  --ring: 150 60% 35%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 160 30% 5%;
+    --foreground: 140 30% 95%;
+
+    --primary: 150 60% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 20% 15%;
+    --secondary-foreground: 140 30% 95%;
+
+    --muted: 160 20% 12%;
+    --muted-foreground: 140 20% 60%;
+
+    --accent: 35 90% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --card: 160 25% 8%;
+    --card-foreground: 140 30% 95%;
+
+    --border: 160 20% 20%;
+    --input: 160 20% 20%;
+    --ring: 150 60% 45%;
+  }
+}
+
+/* Base setup */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* Custom utilities */
+@utility glass {
+  @apply bg-background/80 backdrop-blur-md border border-border/50;
+}
+
+@utility glass-card {
+  @apply bg-card/50 backdrop-blur-sm border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300;
+}

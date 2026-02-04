@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category",
+    "description": "Categories for eco-habits"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Transport": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "challenges": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::challenge.challenge",
+      "mappedBy": "category"
+    },
+    "FOOD": {
+      "type": "string"
+    }
+  }
+}
